@@ -1,0 +1,16 @@
+.track {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 8px 0;
+    background: #f9f9f9;
+}
+
+.track:hover {
+    background: #e6e6e6;
+}
+
+.album {
+    color: #888;
+    font-style: italic;
+}

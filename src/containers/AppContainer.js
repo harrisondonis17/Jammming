@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Callback from "./components/Callback";
-import SearchBar from "../components/SearchBar";
-import SearchResults from "../components/SearchResults";
+import Callback from "../components/Callback";
+import SearchBar from "../components/SearchBar/SearchBar";
+import SearchResults from "../components/SearchResults/SearchResults";
 import Playlist from "../components/Playlist";
 import PlaylistControls from "../components/PlaylistControls";
 
