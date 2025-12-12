@@ -12,6 +12,15 @@ function AppContainer() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
+  const addTrack = (trackToAdd) => {
+    setPlaylistTracks(prev => 
+      prev.some(track => track.id === trackToAdd.id) ? prev : [...prev, trackToAdd]);
+  }
+  
+  const removeTrack = (trackIdToRemove) => {
+    setPlaylistTracks(prev => prev.filter(track => track.id !== trackIdToRemove));
+  }
+
   return (
     <Router>
       <Routes>
@@ -22,10 +31,14 @@ function AppContainer() {
               setSearchTerm={setSearchTerm}
               setSearchResults={setSearchResults}
             />
-            <SearchResults searchResults={searchResults} />
+            <SearchResults 
+              searchResults={searchResults}
+              addTrack={addTrack}
+            />
             <Playlist 
               playlistTracks={playlistTracks} 
               setPlaylistTracks={setPlaylistTracks}
+              removeTrack={removeTrack}
             />
             <PlaylistControls />
           </div>

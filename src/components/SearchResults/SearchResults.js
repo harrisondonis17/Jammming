@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchResults.css"; 
 
-function SearchResults({ searchResults }) {
+function SearchResults({ searchResults, addTrack }) {
 
     return (
         <div>
@@ -9,6 +9,7 @@ function SearchResults({ searchResults }) {
                 searchResults.map(track => (
                     <div className="track" key={track.id}>
                         <p><strong>{track.name}</strong> by <span className="album">{track.artists[0].name} ({track.album.name})</span></p>
+                        <button onClick={() => addTrack(track)}>Add</button>
                     </div>
                 ))
             ) : (
