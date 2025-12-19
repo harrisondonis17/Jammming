@@ -11,6 +11,7 @@ function AppContainer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist")
 
   const addTrack = (trackToAdd) => {
     setPlaylistTracks(prev => 
@@ -40,7 +41,11 @@ function AppContainer() {
               setPlaylistTracks={setPlaylistTracks}
               removeTrack={removeTrack}
             />
-            <PlaylistControls />
+            <PlaylistControls
+              playlistName={playlistName}
+              setPlaylistName={setPlaylistName}
+              playlistTracks={playlistTracks}
+            />
           </div>
         } />
         <Route path="/callback" element={<Callback />} />
